@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gracias por tu Compra</title>
+<meta name="description" content="Gracias por tu compra. Por favor revisa tu correo electrónico para los detalles de acceso." />
+<meta property="og:title" content="Gracias por tu Compra" />
+<meta property="og:description" content="Gracias por tu compra. Por favor revisa tu correo electrónico para los detalles de acceso." />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(135deg,#f8fafc 0%,#eef2f7 50%,#f8fafc 100%);
+    color:#0f172a;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:64px 16px;
+  }
+  .wrap{width:100%;max-width:640px}
+  .card{
+    background:#fff;border:1px solid #e2e8f0;border-radius:24px;
+    box-shadow:0 20px 50px -20px rgba(15,23,42,.15);
+    padding:48px 32px;text-align:center;
+  }
+  @media(min-width:768px){.card{padding:56px 48px}}
+  .check{
+    width:80px;height:80px;border-radius:9999px;background:#dcfce7;
+    display:inline-flex;align-items:center;justify-content:center;margin-bottom:24px;
+  }
+  .check svg{width:48px;height:48px;color:#16a34a}
+  h1{font-size:28px;line-height:1.2;margin:0 0 16px;font-weight:700}
+  @media(min-width:768px){h1{font-size:36px}}
+  p{margin:0 0 8px;color:#475569;font-size:16px}
+  .inbox{
+    background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;
+    padding:24px;margin:32px 0;
+  }
+  .inbox-title{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px}
+  .inbox h2{margin:0;font-size:18px;font-weight:600;color:#0f172a}
+  .inbox p{font-size:14px;margin:0}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
+  @media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr)}}
+  .provider{
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    padding:16px;border:1px solid #e2e8f0;border-radius:12px;background:#fff;
+    text-decoration:none;color:#0f172a;transition:all .2s ease;
+  }
+  .provider:hover{border-color:#0f172a;box-shadow:0 6px 14px -6px rgba(15,23,42,.18)}
+  .logo{
+    width:64px;height:64px;border-radius:9999px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 1px 3px rgba(0,0,0,.08);transition:transform .2s ease;
+  }
+  .provider:hover .logo{transform:scale(1.08)}
+  .logo svg{width:40px;height:40px}
+  .logo.white{background:#fff}
+  .logo.yahoo{background:#6001d2}
+  .name{font-size:14px;font-weight:500}
+  .footer{border-top:1px solid #e2e8f0;padding-top:24px}
+  .footer p{font-size:14px}
+  .footer a{color:#0f172a;font-weight:500;text-decoration:underline;text-underline-offset:3px;}
+  .footer a:hover{color:#2563eb}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h1>¡Gracias por tu Compra!</h1>
+      <p>Tu pedido ha sido confirmado exitosamente.</p>
+      <p>Hemos enviado los detalles de acceso y el enlace de descarga a tu correo electrónico.</p>
+
+      <div class="inbox">
+        <div class="inbox-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          <h2>Revisa tu Bandeja de Entrada</h2>
+        </div>
+        <p>Por favor revisa tu correo electrónico (incluyendo la carpeta de spam/correo no deseado). Haz clic en tu proveedor de correo para abrirlo directamente:</p>
+      </div>
+
+      <div class="grid">
+        <a class="provider" href="https://accounts.google.com/AccountChooser?service=mail&continue=https://mail.google.com/mail/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Gmail">
+          <div class="logo white">
+            <svg viewBox="0 0 48 48"><path fill="#4285f4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#34a853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#fbbc05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#ea4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          </div>
+          <span class="name">Gmail</span>
+        </a>
+        <a class="provider" href="https://mail.yahoo.com" target="_blank" rel="noopener noreferrer" aria-label="Abrir Yahoo Mail">
+          <div class="logo yahoo">
+            <svg viewBox="0 0 32 32"><path fill="#fff" d="M3 8h5.2l3.6 8.9L15.5 8h5L13.6 24h-5.1l1.9-4.4L3 8zm19.6 6.7a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4zM22 6h4.5l-4 9.5H18L22 6z"/></svg>
+          </div>
+          <span class="name">Yahoo Mail</span>
+        </a>
+        <a class="provider" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=&rver=&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f" target="_blank" rel="noopener noreferrer" aria-label="Abrir Outlook">
+          <div class="logo white">
+            <svg viewBox="0 0 48 48"><path fill="#0364b8" d="M44 13.5v21A1.5 1.5 0 0 1 42.5 36H20V12h22.5a1.5 1.5 0 0 1 1.5 1.5z"/><path fill="#0078d4" d="M20 18h24v12H20z"/><path fill="#28a8ea" d="M20 18h24l-12 8z"/><path fill="#0078d4" d="M4 10.5L22 7v34L4 37.5z"/><ellipse cx="13" cy="24" rx="5.5" ry="6.5" fill="#fff"/><ellipse cx="13" cy="24" rx="2.7" ry="3.6" fill="#0078d4"/></svg>
+          </div>
+          <span class="name">Outlook</span>
+        </a>
+        <a class="provider" href="https://www.icloud.com/mail" target="_blank" rel="noopener noreferrer" aria-label="Abrir iCloud Mail">
+          <div class="logo white">
+            <svg viewBox="0 0 48 48"><path fill="#3b3b3b" d="M36.5 22.3a9 9 0 0 0-17.4-2.6 7 7 0 0 0-1.6-.2 7.5 7.5 0 1 0 0 15h18a6.1 6.1 0 0 0 1-12.2z"/></svg>
+          </div>
+          <span class="name">iCloud Mail</span>
+        </a>
+      </div>
+
+      <div class="footer">
+        <p>¿Necesitas ayuda? Contáctanos en <a href="mailto:mysuporteacademy@gmail.com">mysuporteacademy@gmail.com</a> y te responderemos a la brevedad posible.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
