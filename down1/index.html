@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0D0A06">
+<title>Escudo de Miguel — Oferta Especial</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold:        #C9A84C;
+    --gold-light:  #E8C97A;
+    --gold-dark:   #8B6914;
+    --deep:        #0D0A06;
+    --surface:     #13100A;
+    --surface-mid: #1C1710;
+    --text:        #EDE0C4;
+    --text-dim:    #9E8E6A;
+    --white:       #FEFAF2;
+
+    /* fluid type scale — mobile-first */
+    --fs-xs:   clamp(0.70rem, 2.5vw, 0.78rem);
+    --fs-sm:   clamp(0.85rem, 3vw,  0.95rem);
+    --fs-base: clamp(1rem,    3.5vw, 1.05rem);
+    --fs-md:   clamp(1.15rem, 4vw,  1.35rem);
+    --fs-lg:   clamp(1.6rem,  5.5vw, 2.2rem);
+    --fs-xl:   clamp(2rem,    7vw,   3rem);
+    --fs-price:clamp(2.4rem,  9vw,   3.8rem);
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+
+    --space-xs: clamp(8px,  2vw, 12px);
+    --space-sm: clamp(14px, 3vw, 20px);
+    --space-md: clamp(20px, 4vw, 32px);
+    --space-lg: clamp(32px, 6vw, 52px);
+  }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    background-color: var(--deep);
+    color: var(--text);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+  }
+
+  /* Glow */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 35% at 50% 0%,   rgba(201,168,76,0.11) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 25% at 50% 100%,  rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── RIBBON ── */
+  .ribbon {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--gold-dark);
+    color: var(--gold-light);
+    text-align: center;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    line-height: 1.4;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 var(--space-sm) var(--space-lg);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: var(--space-lg) 0 var(--space-md);
+  }
+
+  .eyebrow {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-line {
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto var(--space-sm);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: var(--space-xs);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: var(--fs-sm);
+    color: var(--text-dim);
+    max-width: 420px;
+    margin: var(--space-xs) auto 0;
+    line-height: 1.65;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: var(--space-md) 0;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-dark));
+  }
+  .divider::after { background: linear-gradient(to left, transparent, var(--gold-dark)); }
+  .divider-icon {
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    flex-shrink: 0;
+  }
+
+  /* ── COPY ── */
+  .copy-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .copy-section p {
+    font-size: var(--fs-base);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  .copy-section strong {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--surface-mid);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-xs) 0;
+  }
+
+  .callout p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-md);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.5;
+  }
+
+  /* ── WARNING ── */
+  .warning {
+    background: rgba(122,30,30,0.18);
+    border: 1px solid rgba(180,50,50,0.35);
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-xs) 0;
+  }
+
+  .warning p {
+    color: #E8A0A0;
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+  }
+
+  .warning strong { color: #F5C0C0 !important; }
+
+  /* ── PRICE BOX ── */
+  .price-reveal {
+    text-align: center;
+    padding: var(--space-md) var(--space-sm);
+    background: var(--surface);
+    border: 1px solid var(--gold-dark);
+    border-radius: var(--radius-md);
+    margin: var(--space-md) 0 var(--space-sm);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-reveal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .price-reveal-inner { position: relative; }
+
+  .price-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: var(--space-xs);
+  }
+
+  .price-old {
+    font-size: var(--fs-sm);
+    color: var(--text-dim);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .price-new {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-price);
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .price-note {
+    font-size: var(--fs-xs);
+    color: var(--text-dim);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* ── GATEWAY SLOT ── */
+  .gateway-slot {
+    margin: var(--space-md) 0 0;
+    width: 100%;
+  }
+
+  /* ── SEAL ── */
+  .seal {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    background: var(--surface-mid);
+    border: 1px solid var(--gold-dark);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .seal-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+
+  .seal-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-base);
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .seal-text p {
+    font-size: var(--fs-sm);
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ── MOBILE FINE-TUNING ── */
+  @media (max-width: 400px) {
+    .callout { padding: var(--space-sm) var(--space-sm); }
+    .warning  { padding: var(--space-sm) var(--space-sm); }
+    .seal     { padding: var(--space-sm); gap: var(--space-xs); }
+    .seal-icon { font-size: 1.8rem; }
+    .ribbon { font-size: 0.65rem; letter-spacing: 0.08em; }
+  }
+
+  /* ── TABLET / DESKTOP ── */
+  @media (min-width: 600px) {
+    .seal { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon">⚠ Esta oferta expira cuando cierres esta página — solo disponible ahora</div>
+
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="eyebrow">Espera un momento</p>
+    <span class="hero-line"></span>
+    <h1>¿El precio te pareció<br><em>elevado?</em></h1>
+    <p class="hero-sub">Con tu permiso, tengo algo que cambiará por completo tu decisión…</p>
+  </header>
+
+  <div class="divider"><span class="divider-icon">✦ ✦ ✦</span></div>
+
+  <!-- COPY -->
+  <div class="copy-section">
+
+    <p>Genuinamente quiero que alcances la <strong>prosperidad y la estabilidad</strong> que mereces. Por eso, estoy a punto de hacer de esta <strong>la decisión más sencilla que hayas tomado en toda tu vida…</strong></p>
+
+    <p>Al punto de que te arrepentirás profundamente si dejas escapar esta oportunidad.</p>
+
+    <div class="callout">
+      <p>"Voy a REDUCIR drásticamente el precio del Escudo de Miguel a un valor absurdamente bajo… pero solo disponible ahora."</p>
+    </div>
+
+    <p>¿Por qué estoy haciendo esto? La razón es simple:</p>
+
+    <p>No quiero que el precio sea un obstáculo para que <strong>mantengas y protejas toda la riqueza</strong> que estás manifestando con el Manuscrito Sagrado. No quiero que seas como tantas personas que prosperan, pero después ven todo escurrirse entre los dedos… sin poder mantener el éxito financiero por mucho tiempo.</p>
+
+    <p>Creo de corazón que, al brindarte tanto valor, quedarás inmensamente agradecida y garantizarás que <strong>tu riqueza y prosperidad sean duraderas</strong>.</p>
+
+    <div class="warning">
+      <p><strong>Sin el Escudo de Miguel</strong>, corres el riesgo de pasar la vida entera viendo tu prosperidad escaparse entre los dedos. No permitas que eso te suceda.</p>
+    </div>
+
+    <p>Mi objetivo es ayudar a personas como tú no solo a manifestar riquezas, <strong>sino a preservarlas para que duren toda la vida.</strong></p>
+
+  </div>
+
+  <!-- PRICE BOX -->
+  <div class="price-reveal">
+    <div class="price-reveal-inner">
+      <p class="price-label">Tu oferta exclusiva de hoy</p>
+      <p class="price-old">Precio original: $97</p>
+      <p class="price-new">Precio especial</p>
+      <p class="price-note">Descuento aplicado automáticamente · Solo en esta página</p>
+    </div>
+  </div>
+
+  <!-- GATEWAY BUTTONS (inseridos pelo gateway de pagamento) -->
+  <div class="gateway-slot">
+    <!-- [GATEWAY BUTTONS HERE] -->
+  </div>
+
+  <!-- SEAL -->
+  <div class="seal">
+    <div class="seal-icon">🛡️</div>
+    <div class="seal-text">
+      <h4>Protección garantizada</h4>
+      <p>El Escudo de Miguel fue diseñado para preservar cada logro que has alcanzado. Esta es tu última oportunidad de obtenerlo con este descuento especial.</p>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+</body>
+</html>
