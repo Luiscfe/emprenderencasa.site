@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>¡ESPERA! Etapa exclusiva</title>
+
+<link rel="preload" as="script" href="https://scripts.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/players/6a36a6a5d33a58bff6e73d6a/v4/player.js" />
+<link rel="preload" as="script" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" />
+<link rel="preload" as="fetch" href="https://cdn.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/6a36a6a1daaab420ed28a4fc/main.m3u8" crossorigin="anonymous" />
+<link rel="dns-prefetch" href="https://cdn.converteai.net" />
+<link rel="dns-prefetch" href="https://scripts.converteai.net" />
+<link rel="dns-prefetch" href="https://images.converteai.net" />
+<link rel="dns-prefetch" href="https://license.vturb.com" />
+
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+
+<style>
+  :root{
+    --background:#fbf9f5;
+    --foreground:#0f1729;
+    --primary:#1a2a4f;
+    --primary-foreground:#fbf9f5;
+    --cta:#f59042;
+    --cta-foreground:#1f1408;
+    --success:#22a06b;
+    --success-foreground:#ffffff;
+    --destructive:#dc2626;
+    --destructive-foreground:#ffffff;
+    --border:#e6e3dc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;border:0 solid var(--border)}
+  html,body{background:var(--background);color:var(--foreground);-webkit-font-smoothing:antialiased;font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.4}
+  h1,h2,h3,h4{font-family:Oswald,Impact,system-ui,sans-serif;letter-spacing:-.01em}
+
+  .progress{background:var(--primary);color:var(--primary-foreground)}
+  .progress-inner{max-width:1024px;margin:0 auto;padding:20px 16px}
+  .steps{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .step{flex:1;display:flex;align-items:center;gap:8px}
+  .step-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+  .circle{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;border:2px solid rgba(251,249,245,.4);background:var(--primary);color:rgba(251,249,245,.7);transition:.2s}
+  .circle.done{border-color:var(--success);background:var(--success);color:var(--success-foreground)}
+  .circle.active{border-color:var(--cta);background:var(--cta);color:var(--cta-foreground);box-shadow:0 0 0 4px rgba(245,144,66,.3)}
+  .step-label{display:none;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(251,249,245,.8)}
+  .step-label.active{color:var(--cta)}
+  @media(min-width:640px){.step-label{display:block}}
+  .bar{height:4px;flex:1;border-radius:9999px;background:rgba(251,249,245,.2)}
+  .bar.done{background:var(--success)}
+  .substep{margin-top:12px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--cta)}
+
+  .alert{background:var(--destructive);color:var(--destructive-foreground)}
+  .alert-inner{max-width:1024px;margin:0 auto;padding:12px 16px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+  @media(min-width:640px){.alert-inner{flex-direction:row;justify-content:center;gap:12px}}
+  .alert p{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+  @media(min-width:640px){.alert p{font-size:16px}}
+  .blink{font-size:18px;animation:blink 1s steps(2,start) infinite}
+  @keyframes blink{50%{opacity:.35}}
+
+  .video-section{background:var(--background)}
+  .video-wrap{max-width:672px;margin:0 auto;padding:32px 16px;width:100%}
+  vturb-smartplayer{display:block;margin:0 auto;width:100%}
+</style>
+</head>
+<body>
+
+<header class="progress">
+  <div class="progress-inner">
+    <ol class="steps" id="steps"></ol>
+    <p class="substep">Etapa <span id="substep">1</span> de 6 — completa todas para liberar tu acceso</p>
+  </div>
+</header>
+
+<div class="alert">
+  <div class="alert-inner">
+    <span class="blink" aria-hidden="true">⚠️</span>
+    <p>ATENCIÓN: ¡NO SALGAS DE ESTA PÁGINA! Tu compra aún NO se ha completado al 100%.</p>
+  </div>
+</div>
+
+<main class="video-section">
+  <div class="video-wrap">
+    <vturb-smartplayer id="vid-6a36a6a5d33a58bff6e73d6a"></vturb-smartplayer>
+  </div>
+</main>
+
+<script>
+  // Render steps
+  (function(){
+    var labels=["Pedido","Pago","Etapas Exclusivas","Acceso al Producto"];
+    var current=2; // "Etapas Exclusivas" active
+    var ol=document.getElementById("steps");
+    labels.forEach(function(label,i){
+      var done=i<current, active=i===current;
+      var li=document.createElement("li"); li.className="step";
+      var wrap=document.createElement("div"); wrap.className="step-wrap";
+      var c=document.createElement("div"); c.className="circle"+(done?" done":active?" active":"");
+      c.textContent=done?"✓":(i+1);
+      var s=document.createElement("span"); s.className="step-label"+(active?" active":""); s.textContent=label;
+      wrap.appendChild(c); wrap.appendChild(s); li.appendChild(wrap);
+      if(i<labels.length-1){var b=document.createElement("div"); b.className="bar"+(i<current?" done":""); li.appendChild(b);}
+      ol.appendChild(li);
+    });
+    // Allow ?step=1..6 to override the substep number
+    var p=new URLSearchParams(location.search).get("step");
+    if(p && +p>=1 && +p<=6) document.getElementById("substep").textContent=p;
+  })();
+
+  // Vturb player
+  (function(){
+    var s=document.createElement("script");
+    s.src="https://scripts.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/players/6a36a6a5d33a58bff6e73d6a/v4/player.js";
+    s.async=true;
+    document.head.appendChild(s);
+  })();
+</script>
+
+</body>
+</html>
