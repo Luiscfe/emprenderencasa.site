@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+ <script src="https://upsell.mundpay.com/script-v2.js" defer async></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="theme-color" content="#0D0A06">
+<meta name="theme-color" content="#FAF7F2">
 <title>Escudo de Miguel — Oferta Especial</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<!--
+  Fontes escolhidas para público 40+:
+  · Playfair Display  → títulos: serifa clássica, formas amplas, alta elegância
+  · Source Serif 4    → corpo: serifa humanista, excelente legibilidade em texto corrido
+    (serifas ajudam o olho "guiar" a leitura linha a linha — melhor que sans-serif para parágrafos longos)
+-->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --gold:        #C9A84C;
-    --gold-light:  #E8C97A;
-    --gold-dark:   #8B6914;
-    --deep:        #0D0A06;
-    --surface:     #13100A;
-    --surface-mid: #1C1710;
-    --text:        #EDE0C4;
-    --text-dim:    #9E8E6A;
-    --white:       #FEFAF2;
+    --gold:        #9A6E0A;
+    --gold-mid:    #B8860B;
+    --gold-light:  #F5E6C0;
+    --gold-border: #D4A843;
+    --deep:        #2C1A00;
+    --text:        #2C1A00;
+    --text-mid:    #4A3510;
+    --text-soft:   #7A6040;
+    --bg:          #FAF7F2;
+    --bg-warm:     #FFF8EC;
+    --red:         #991B1B;
+    --red-bg:      #FEF2F2;
+    --red-border:  #FECACA;
+    --border:      #E8D9B8;
 
-    /* fluid type scale — mobile-first */
-    --fs-xs:   clamp(0.70rem, 2.5vw, 0.78rem);
-    --fs-sm:   clamp(0.85rem, 3vw,  0.95rem);
-    --fs-base: clamp(1rem,    3.5vw, 1.05rem);
-    --fs-md:   clamp(1.15rem, 4vw,  1.35rem);
-    --fs-lg:   clamp(1.6rem,  5.5vw, 2.2rem);
-    --fs-xl:   clamp(2rem,    7vw,   3rem);
-    --fs-price:clamp(2.4rem,  9vw,   3.8rem);
+    /* tamanhos maiores — conforto de leitura para 40+ */
+    --fs-xs:    clamp(0.80rem, 2.8vw, 0.88rem);
+    --fs-sm:    clamp(1rem,    3.5vw, 1.08rem);
+    --fs-base:  clamp(1.10rem, 4vw,   1.20rem);
+    --fs-md:    clamp(1.25rem, 4.5vw, 1.45rem);
+    --fs-xl:    clamp(1.8rem,  6vw,   2.5rem);
+    --fs-price: clamp(2rem,    7vw,   3rem);
+
+    --sp-xs: clamp(8px,  2vw, 12px);
+    --sp-sm: clamp(14px, 3vw, 20px);
+    --sp-md: clamp(22px, 4vw, 34px);
+    --sp-lg: clamp(36px, 6vw, 56px);
 
     --radius-sm: 6px;
     --radius-md: 10px;
-
-    --space-xs: clamp(8px,  2vw, 12px);
-    --space-sm: clamp(14px, 3vw, 20px);
-    --space-md: clamp(20px, 4vw, 32px);
-    --space-lg: clamp(32px, 6vw, 52px);
   }
 
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
   body {
-    background-color: var(--deep);
+    background: var(--bg);
     color: var(--text);
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    line-height: 1.75;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 400;
+    font-size: var(--fs-base);
+    line-height: 1.85;
     -webkit-font-smoothing: antialiased;
     min-height: 100dvh;
-  }
-
-  /* Glow */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 35% at 50% 0%,   rgba(201,168,76,0.11) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 25% at 50% 100%,  rgba(201,168,76,0.06) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
   }
 
   /* ── RIBBON ── */
@@ -67,8 +67,8 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--gold-dark);
-    color: var(--gold-light);
+    background: var(--gold-mid);
+    color: #fff;
     text-align: center;
     font-size: var(--fs-xs);
     font-weight: 700;
@@ -78,20 +78,19 @@
     line-height: 1.4;
   }
 
-  /* ── PAGE WRAPPER ── */
+  /* ── PAGE ── */
   .page {
-    position: relative;
-    z-index: 1;
-    width: 100%;
     max-width: 660px;
     margin: 0 auto;
-    padding: 0 var(--space-sm) var(--space-lg);
+    padding: 0 var(--sp-sm) var(--sp-lg);
   }
 
   /* ── HERO ── */
   .hero {
     text-align: center;
-    padding: var(--space-lg) 0 var(--space-md);
+    padding: var(--sp-lg) 0 var(--sp-md);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--sp-md);
   }
 
   .eyebrow {
@@ -100,37 +99,37 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--sp-sm);
   }
 
   .hero-line {
     display: block;
     width: 36px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto var(--space-sm);
+    height: 2px;
+    background: var(--gold-border);
+    margin: 0 auto var(--sp-sm);
   }
 
   .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: var(--fs-xl);
     font-weight: 700;
-    line-height: 1.15;
-    color: var(--white);
-    margin-bottom: var(--space-xs);
+    line-height: 1.2;
+    color: var(--deep);
+    margin-bottom: var(--sp-xs);
   }
 
   .hero h1 em {
     font-style: italic;
-    color: var(--gold-light);
+    color: var(--gold-mid);
   }
 
   .hero-sub {
     font-size: var(--fs-sm);
-    color: var(--text-dim);
-    max-width: 420px;
-    margin: var(--space-xs) auto 0;
-    line-height: 1.65;
+    color: var(--text-mid);
+    max-width: 440px;
+    margin: var(--sp-xs) auto 0;
+    line-height: 1.7;
   }
 
   /* ── DIVIDER ── */
@@ -138,18 +137,17 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: var(--space-md) 0;
+    margin: var(--sp-md) 0;
   }
   .divider::before, .divider::after {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold-dark));
+    background: var(--border);
   }
-  .divider::after { background: linear-gradient(to left, transparent, var(--gold-dark)); }
   .divider-icon {
-    color: var(--gold);
-    font-size: 0.9rem;
+    color: var(--gold-border);
+    font-size: 0.85rem;
     letter-spacing: 5px;
     flex-shrink: 0;
   }
@@ -158,155 +156,170 @@
   .copy-section {
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--sp-sm);
   }
 
   .copy-section p {
     font-size: var(--fs-base);
-    color: var(--text);
-    line-height: 1.8;
+    color: var(--text-mid);
+    line-height: 1.85;
   }
 
   .copy-section strong {
-    color: var(--white);
+    color: var(--deep);
     font-weight: 700;
   }
 
   /* ── CALLOUT ── */
   .callout {
-    background: var(--surface-mid);
-    border-left: 3px solid var(--gold);
+    background: var(--bg-warm);
+    border-left: 4px solid var(--gold-border);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: var(--space-sm) var(--space-md);
-    margin: var(--space-xs) 0;
+    padding: var(--sp-sm) var(--sp-md);
+    margin: var(--sp-xs) 0;
   }
 
   .callout p {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Source Serif 4', Georgia, serif;
     font-size: var(--fs-md);
     font-weight: 600;
     font-style: italic;
-    color: var(--gold-light);
-    line-height: 1.5;
+    color: var(--gold);
+    line-height: 1.6;
   }
 
   /* ── WARNING ── */
   .warning {
-    background: rgba(122,30,30,0.18);
-    border: 1px solid rgba(180,50,50,0.35);
+    background: var(--red-bg);
+    border: 1px solid var(--red-border);
     border-radius: var(--radius-sm);
-    padding: var(--space-sm) var(--space-md);
-    margin: var(--space-xs) 0;
+    padding: var(--sp-sm) var(--sp-md);
+    margin: var(--sp-xs) 0;
   }
 
   .warning p {
-    color: #E8A0A0;
+    color: var(--red);
     font-size: var(--fs-sm);
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
-  .warning strong { color: #F5C0C0 !important; }
+  .warning strong { color: #7F1D1D !important; }
 
   /* ── PRICE BOX ── */
   .price-reveal {
     text-align: center;
-    padding: var(--space-md) var(--space-sm);
-    background: var(--surface);
-    border: 1px solid var(--gold-dark);
+    padding: var(--sp-md) var(--sp-sm);
+    background: var(--bg-warm);
+    border: 2px solid var(--gold-border);
     border-radius: var(--radius-md);
-    margin: var(--space-md) 0 var(--space-sm);
-    position: relative;
-    overflow: hidden;
+    margin: var(--sp-md) 0 var(--sp-sm);
   }
-
-  .price-reveal::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .price-reveal-inner { position: relative; }
 
   .price-label {
     font-size: var(--fs-xs);
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: var(--space-xs);
+    color: var(--text-soft);
+    margin-bottom: var(--sp-xs);
   }
 
   .price-old {
     font-size: var(--fs-sm);
-    color: var(--text-dim);
+    color: var(--text-soft);
     text-decoration: line-through;
     margin-bottom: 4px;
   }
 
   .price-new {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: var(--fs-price);
     font-weight: 700;
-    color: var(--gold-light);
+    color: var(--gold);
     line-height: 1.1;
     margin-bottom: 6px;
   }
 
   .price-note {
     font-size: var(--fs-xs);
-    color: var(--text-dim);
+    color: var(--text-soft);
     margin-top: 8px;
     line-height: 1.5;
   }
 
   /* ── GATEWAY SLOT ── */
   .gateway-slot {
-    margin: var(--space-md) 0 0;
     width: 100%;
+    margin: var(--sp-sm) 0 0;
   }
 
   /* ── SEAL ── */
   .seal {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-sm);
-    background: var(--surface-mid);
-    border: 1px solid var(--gold-dark);
+    gap: var(--sp-sm);
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
     border-radius: var(--radius-md);
-    padding: var(--space-sm) var(--space-md);
-    margin-top: var(--space-md);
+    padding: var(--sp-sm) var(--sp-md);
+    margin-top: var(--sp-md);
   }
 
   .seal-icon {
-    font-size: 2.2rem;
+    font-size: 2rem;
     flex-shrink: 0;
     line-height: 1.2;
   }
 
   .seal-text h4 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: var(--fs-base);
     font-weight: 700;
-    color: var(--gold-light);
+    color: var(--deep);
     margin-bottom: 4px;
     line-height: 1.3;
   }
 
   .seal-text p {
     font-size: var(--fs-sm);
-    color: var(--text-dim);
-    line-height: 1.6;
+    color: var(--text-mid);
+    line-height: 1.65;
   }
 
-  /* ── MOBILE FINE-TUNING ── */
+  /* ── GATEWAY SLOT: garante que o botão da Kiwify ocupe largura total no mobile ── */
+  .gateway-slot { text-align: center; }
+
+  .gateway-slot button,
+  .gateway-slot [id*="upsell-trigger"] {
+    width: 100% !important;
+    max-width: 480px !important;
+    font-size: clamp(1rem, 4.5vw, 1.25rem) !important;
+    padding: 16px !important;
+    border-radius: 6px !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    touch-action: manipulation;
+  }
+
+  .gateway-slot [id*="cancel-trigger"] {
+    font-size: clamp(0.85rem, 3vw, 0.95rem) !important;
+  }
+
+  /* ── MOBILE PEQUENO (≤ 400px) ── */
   @media (max-width: 400px) {
-    .callout { padding: var(--space-sm) var(--space-sm); }
-    .warning  { padding: var(--space-sm) var(--space-sm); }
-    .seal     { padding: var(--space-sm); gap: var(--space-xs); }
-    .seal-icon { font-size: 1.8rem; }
-    .ribbon { font-size: 0.65rem; letter-spacing: 0.08em; }
+    .page     { padding-left: 16px; padding-right: 16px; }
+    .callout  { padding: var(--sp-sm) 14px; }
+    .warning  { padding: var(--sp-sm) 14px; }
+    .seal     { padding: var(--sp-sm) 14px; gap: var(--sp-xs); }
+    .seal-icon { font-size: 1.7rem; }
+    .ribbon   { font-size: 0.68rem; letter-spacing: 0.05em; padding: 9px 12px; }
+    .hero h1  { font-size: clamp(1.6rem, 7.5vw, 1.9rem); }
+    .price-reveal { padding: var(--sp-sm) 14px; }
+  }
+
+  /* ── MOBILE MÉDIO (401–599px) ── */
+  @media (min-width: 401px) and (max-width: 599px) {
+    .ribbon { letter-spacing: 0.08em; }
   }
 
   /* ── TABLET / DESKTOP ── */
@@ -358,17 +371,14 @@
 
   <!-- PRICE BOX -->
   <div class="price-reveal">
-    <div class="price-reveal-inner">
-      <p class="price-label">Tu oferta exclusiva de hoy</p>
-      <p class="price-old">Precio original: $97</p>
-      <p class="price-new">Precio especial</p>
-      <p class="price-note">Descuento aplicado automáticamente · Solo en esta página</p>
-    </div>
+    <p class="price-label">Tu oferta exclusiva de hoy</p>
+    <p class="price-old">Precio original: $97</p>
+    <p class="price-new">Precio especial</p>
+    <p class="price-note">Descuento aplicado automáticamente · Solo en esta página</p>
   </div>
-<div style="text-align:center" id="kiwify-upsell-DFMGB3Z" data-upsell-url="" data-downsell-url="">
-          <button id="kiwify-upsell-trigger-DFMGB3Z" style="background-color:#2ECC70;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #2ECC70;font-size:20px;">¡SÍ, AÑADIR AL PAQUETE!</button>
-          <div id="kiwify-upsell-cancel-trigger-DFMGB3Z" style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">No, ignorar los beneficios...</div>
-        </div><script src="https://snippets.kiwify.com/upsell/upsell.min.js"></script>
+
+  <!-- GATEWAY SLOT -->
+ <div data-mndpay-render="019ef080-237c-737d-ba76-e4f5064b32f2"></div>
 
   <!-- SEAL -->
   <div class="seal">
