@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>¡ÚLTIMO PASO! Oferta final de tu pedido</title>
+
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/players/6a403f5b76550db92c2a06f7/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/6a403f544117dbb4095e649b/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
+
+<style>
+  :root{
+    --background:#fdfaf6;
+    --foreground:#1c1208;
+    --primary:#3b1f0f;
+    --primary-foreground:#fdfaf6;
+    --cta:#c0392b;
+    --cta-foreground:#ffffff;
+    --success:#22a06b;
+    --success-foreground:#ffffff;
+    --accent:#caa45d;
+    --border:#e9e1d2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;border:0 solid var(--border)}
+  html,body{background:var(--background);color:var(--foreground);-webkit-font-smoothing:antialiased;font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.4}
+  h1,h2,h3,h4{font-family:Oswald,Impact,system-ui,sans-serif;letter-spacing:-.01em}
+
+  .progress{background:var(--primary);color:var(--primary-foreground);border-bottom:3px solid var(--accent)}
+  .progress-inner{max-width:1024px;margin:0 auto;padding:20px 16px}
+  .steps{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .step{flex:1;display:flex;align-items:center;gap:8px}
+  .step-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+  .circle{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;border:2px solid rgba(253,250,246,.4);background:var(--primary);color:rgba(253,250,246,.7);transition:.2s}
+  .circle.done{border-color:var(--success);background:var(--success);color:var(--success-foreground)}
+  .circle.active{border-color:var(--accent);background:var(--accent);color:var(--primary);box-shadow:0 0 0 4px rgba(202,164,93,.35)}
+  .step-label{display:none;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(253,250,246,.8)}
+  .step-label.active{color:var(--accent)}
+  @media(min-width:640px){.step-label{display:block}}
+  .bar{height:4px;flex:1;border-radius:9999px;background:rgba(253,250,246,.2)}
+  .bar.done{background:var(--success)}
+  .substep{margin-top:12px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--accent)}
+
+  .alert{background:var(--cta);color:var(--cta-foreground)}
+  .alert-inner{max-width:1024px;margin:0 auto;padding:14px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+  @media(min-width:640px){.alert-inner{flex-direction:row;justify-content:center;gap:12px}}
+  .alert p{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+  @media(min-width:640px){.alert p{font-size:16px}}
+  .pulse-icon{font-size:20px;animation:pulse 1.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+
+  .heading{max-width:672px;margin:0 auto;padding:28px 16px 4px;text-align:center}
+  .heading span.eyebrow{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--cta);margin-bottom:8px}
+  .heading h1{font-size:22px;color:var(--primary)}
+  @media(min-width:640px){.heading h1{font-size:30px}}
+
+  .video-section{background:var(--background)}
+  .video-wrap{max-width:672px;margin:0 auto;padding:20px 16px 36px;width:100%}
+  vturb-smartplayer{display:block;margin:0 auto;width:100%}
+</style>
+</head>
+<body>
+
+<header class="progress">
+  <div class="progress-inner">
+    <ol class="steps" id="steps"></ol>
+    <p class="substep">Etapa <span id="substep">3</span> de 3 — completa todas para liberar tu acceso</p>
+  </div>
+</header>
+
+<div class="alert">
+  <div class="alert-inner">
+    <span class="pulse-icon" aria-hidden="true">⏳</span>
+    <p>¡ÚLTIMO PASO! Esta es tu última oportunidad antes de acceder a tu pedido.</p>
+  </div>
+</div>
+
+<div class="heading">
+  <h1>No te vayas todavía, esto es para ti…</h1>
+</div>
+
+<main class="video-section">
+  <div class="video-wrap">
+    <vturb-smartplayer id="vid-6a403f5b76550db92c2a06f7" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+  </div>
+</main>
+
+<script>
+  // Render steps
+  (function(){
+    var labels=["Pedido","Pago","Etapas Exclusivas","Acceso al Producto"];
+    var current=2; // "Etapas Exclusivas" active
+    var ol=document.getElementById("steps");
+    labels.forEach(function(label,i){
+      var done=i<current, active=i===current;
+      var li=document.createElement("li"); li.className="step";
+      var wrap=document.createElement("div"); wrap.className="step-wrap";
+      var c=document.createElement("div"); c.className="circle"+(done?" done":active?" active":"");
+      c.textContent=done?"✓":(i+1);
+      var s=document.createElement("span"); s.className="step-label"+(active?" active":""); s.textContent=label;
+      wrap.appendChild(c); wrap.appendChild(s); li.appendChild(wrap);
+      if(i<labels.length-1){var b=document.createElement("div"); b.className="bar"+(i<current?" done":""); li.appendChild(b);}
+      ol.appendChild(li);
+    });
+    // Allow ?step=1..3 to override the substep number
+    var p=new URLSearchParams(location.search).get("step");
+    if(p && +p>=1 && +p<=3) document.getElementById("substep").textContent=p;
+    else document.getElementById("substep").textContent="3";
+  })();
+
+  // Vturb player
+  (function(){
+    var s=document.createElement("script");
+    s.src="https://scripts.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/players/6a403f5b76550db92c2a06f7/v4/player.js";
+    s.async=true;
+    document.head.appendChild(s);
+  })();
+</script>
+
+</body>
+</html>

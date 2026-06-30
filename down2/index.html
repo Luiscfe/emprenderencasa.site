@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#ffffff">
+<title>Camuflador Espiritual — Oferta Final</title>
+<link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple:      #6B21A8;
+    --purple-dark: #4C1480;
+    --purple-light:#EDE9FF;
+    --gold:        #B45309;
+    --red:         #B91C1C;
+    --red-bg:      #FEF2F2;
+    --red-border:  #FECACA;
+    --green:       #15803D;
+    --green-bg:    #F0FDF4;
+    --green-border:#BBF7D0;
+    --text:        #1C1C1C;
+    --text-mid:    #4B4B4B;
+    --text-soft:   #6B6B6B;
+    --border:      #E5E5E5;
+    --bg:          #FFFFFF;
+
+    --fs-xs:   clamp(0.72rem, 2.5vw, 0.80rem);
+    --fs-sm:   clamp(0.88rem, 3vw,   0.97rem);
+    --fs-base: clamp(1rem,    3.5vw, 1.08rem);
+    --fs-md:   clamp(1.15rem, 4vw,   1.30rem);
+    --fs-lg:   clamp(1.4rem,  5vw,   1.75rem);
+    --fs-xl:   clamp(1.7rem,  6vw,   2.2rem);
+
+    --sp-xs: clamp(8px,  2vw, 12px);
+    --sp-sm: clamp(14px, 3vw, 20px);
+    --sp-md: clamp(22px, 4vw, 34px);
+    --sp-lg: clamp(36px, 6vw, 56px);
+  }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: var(--fs-base);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── RIBBON ── */
+  .ribbon {
+    background: var(--purple-dark);
+    color: #fff;
+    text-align: center;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    line-height: 1.4;
+  }
+
+  /* ── PAGE ── */
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 var(--sp-sm) var(--sp-lg);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: var(--sp-lg) 0 var(--sp-md);
+    border-bottom: 2px solid var(--border);
+    margin-bottom: var(--sp-md);
+  }
+
+  .hero-alert {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: var(--sp-sm);
+  }
+
+  .hero h1 {
+    font-family: Georgia, serif;
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--purple-dark);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .hero-sub {
+    font-size: var(--fs-sm);
+    color: var(--text-mid);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── COPY ── */
+  .copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-sm);
+  }
+
+  .copy p {
+    font-size: var(--fs-base);
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+
+  .copy strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight {
+    background: var(--purple-light);
+    border-left: 4px solid var(--purple);
+    border-radius: 0 6px 6px 0;
+    padding: var(--sp-sm) var(--sp-md);
+  }
+
+  .highlight p {
+    font-family: Georgia, serif;
+    font-size: var(--fs-md);
+    font-style: italic;
+    color: var(--purple-dark);
+    line-height: 1.55;
+  }
+
+  /* ── WARNING ── */
+  .warning {
+    background: var(--red-bg);
+    border: 1px solid var(--red-border);
+    border-radius: 6px;
+    padding: var(--sp-sm) var(--sp-md);
+  }
+
+  .warning p {
+    color: var(--red);
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+  }
+
+  .warning strong { color: #991B1B !important; }
+
+  /* ── BONUS BOX ── */
+  .bonus-box {
+    background: var(--green-bg);
+    border: 1px solid var(--green-border);
+    border-radius: 6px;
+    padding: var(--sp-sm) var(--sp-md);
+  }
+
+  .bonus-title {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .bonus-box p {
+    font-size: var(--fs-sm);
+    color: #166534;
+    line-height: 1.7;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: var(--sp-md) 0;
+  }
+
+  /* ── PRICE ── */
+  .price-block {
+    text-align: center;
+    padding: var(--sp-md) var(--sp-sm);
+    border: 2px solid var(--purple);
+    border-radius: 8px;
+    margin: var(--sp-md) 0 var(--sp-sm);
+  }
+
+  .price-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .price-value {
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 700;
+    color: var(--purple-dark);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .price-note {
+    font-size: var(--fs-xs);
+    color: var(--text-soft);
+  }
+
+  /* ── URGENCY ── */
+  .urgency {
+    text-align: center;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 6px;
+    padding: var(--sp-sm);
+    margin-bottom: var(--sp-sm);
+  }
+
+  .urgency p {
+    font-size: var(--fs-sm);
+    color: var(--gold);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  /* ── GATEWAY SLOT ── */
+  .gateway-slot {
+    width: 100%;
+    margin: 0 0 var(--sp-sm);
+  }
+
+  @media (max-width: 400px) {
+    .highlight { padding: var(--sp-sm); }
+    .warning   { padding: var(--sp-sm); }
+    .bonus-box { padding: var(--sp-sm); }
+    .price-block { padding: var(--sp-sm); }
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon">⚠ Oferta válida solo ahora — no volverá a aparecer</div>
+
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero-alert">¡Espera! Antes de irte…</span>
+    <h1>¡Tengo una oferta final<br>que no puedes dejar pasar!</h1>
+    <p class="hero-sub">Sé que estabas considerando el Camuflador Espiritual. Tengo una propuesta aún más irresistible para ti.</p>
+  </header>
+
+  <!-- COPY -->
+  <div class="copy">
+
+    <p>Por tiempo limitado, estoy ofreciendo una oportunidad única: llévate el <strong>Camuflador Espiritual</strong> por una <strong>contribución simbólica</strong> que encontrarás justo debajo de esta página.</p>
+
+    <div class="highlight">
+      <p>"Solo eso para garantizar la protección espiritual que blindará tu prosperidad de miradas maliciosas y personas envidiosas que quieren verte fracasar."</p>
+    </div>
+
+    <div class="bonus-box">
+      <p class="bonus-title">✦ Bonus especiales incluidos</p>
+      <p>Al adquirirlo ahora, también recibirás <strong>bonos cuidadosamente seleccionados</strong> para potenciar tu protección espiritual y mantener tus riquezas seguras — blindando tu energía e impidiendo que cualquier mal de ojo o envidia tenga efecto sobre tu vida financiera.</p>
+    </div>
+
+    <p>Recuerda: muchas personas logran prosperar, pero terminan viendo todo escurrirse entre los dedos por culpa de <strong>miradas envidiosas y energías negativas</strong> a su alrededor.</p>
+
+    <div class="warning">
+      <p><strong>Sin el Camuflador Espiritual</strong>, corres el riesgo de ver a tus enemigos prosperar mientras tu éxito va desapareciendo poco a poco.</p>
+    </div>
+
+    <p>Esta es una oferta exclusiva y, <strong>una vez que se termine, no habrá otra oportunidad como esta.</strong> No dejes que esta oportunidad de proteger tu prosperidad se escape entre los dedos.</p>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRICE -->
+  <div class="price-block">
+    <p class="price-label">Contribución simbólica de hoy</p>
+    <p class="price-value">Precio especial</p>
+    <p class="price-note">Descuento aplicado automáticamente · Solo en esta página</p>
+  </div>
+
+  <!-- URGENCY -->
+  <div class="urgency">
+    <p>⏳ Esta oferta es válida solo ahora y no volverá.<br>¡No pierdas esta oportunidad de oro!</p>
+  </div>
+
+  <!-- GATEWAY SLOT -->
+  <div class="gateway-slot">
+    <!-- [GATEWAY BUTTONS HERE] -->
+  </div>
+
+</div><!-- /page -->
+
+</body>
+</html>
