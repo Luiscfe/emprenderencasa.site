@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>¡ÚLTIMA OPORTUNIDAD! Oferta final</title>
+<title>¡ESPERA! Tenemos algo más para ti</title>
 
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
 <link rel="preload" href="https://scripts.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/players/6a403f52d846aeb492a2414f/v4/player.js" as="script">
@@ -18,51 +18,57 @@
 
 <style>
   :root{
-    --background:#fbf9f5;
-    --foreground:#0f1729;
-    --primary:#1a2a4f;
-    --primary-foreground:#fbf9f5;
-    --cta:#f59042;
-    --cta-foreground:#1f1408;
+    --background:#0a0a0a;
+    --foreground:#f5f0e8;
+    --primary:#1a0533;
+    --primary-foreground:#f5f0e8;
+    --cta:#9b59b6;
+    --cta-bright:#c39bd3;
     --success:#22a06b;
     --success-foreground:#ffffff;
-    --destructive:#dc2626;
-    --destructive-foreground:#ffffff;
-    --border:#e6e3dc;
+    --accent:#d4a8f0;
+    --border:#2d1b4e;
   }
   *{box-sizing:border-box;margin:0;padding:0;border:0 solid var(--border)}
-  html,body{background:var(--background);color:var(--foreground);-webkit-font-smoothing:antialiased;font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.4}
-  h1,h2,h3,h4{font-family:Oswald,Impact,system-ui,sans-serif;letter-spacing:-.01em}
+  html,body{background:var(--background);color:var(--foreground);-webkit-font-smoothing:antialiased;font-family:Georgia,serif;line-height:1.5}
+  h1,h2,h3{font-family:Georgia,serif;letter-spacing:-.01em}
 
-  .progress{background:var(--primary);color:var(--primary-foreground)}
+  /* Progress bar */
+  .progress{background:var(--primary);color:var(--primary-foreground);border-bottom:3px solid var(--cta)}
   .progress-inner{max-width:1024px;margin:0 auto;padding:20px 16px}
   .steps{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
   .step{flex:1;display:flex;align-items:center;gap:8px}
   .step-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
-  .circle{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;border:2px solid rgba(251,249,245,.4);background:var(--primary);color:rgba(251,249,245,.7);transition:.2s}
-  .circle.done{border-color:var(--success);background:var(--success);color:var(--success-foreground)}
-  .circle.active{border-color:var(--cta);background:var(--cta);color:var(--cta-foreground);box-shadow:0 0 0 4px rgba(245,144,66,.3)}
-  .step-label{display:none;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(251,249,245,.8)}
-  .step-label.active{color:var(--cta)}
+  .circle{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;border:2px solid rgba(245,240,232,.3);background:var(--primary);color:rgba(245,240,232,.6);transition:.2s;font-family:Georgia,serif}
+  .circle.done{border-color:var(--success);background:var(--success);color:#fff}
+  .circle.active{border-color:var(--accent);background:var(--cta);color:#fff;box-shadow:0 0 0 4px rgba(155,89,182,.4)}
+  .step-label{display:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(245,240,232,.7);font-family:Inter,sans-serif}
+  .step-label.active{color:var(--accent)}
   @media(min-width:640px){.step-label{display:block}}
-  .bar{height:4px;flex:1;border-radius:9999px;background:rgba(251,249,245,.2)}
+  .bar{height:4px;flex:1;border-radius:9999px;background:rgba(245,240,232,.15)}
   .bar.done{background:var(--success)}
-  .substep{margin-top:12px;text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--cta)}
+  .substep{margin-top:12px;text-align:center;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-family:Inter,sans-serif}
 
-  .alert{background:var(--cta);color:var(--cta-foreground)}
-  .alert-inner{max-width:1024px;margin:0 auto;padding:12px 16px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
-  @media(min-width:640px){.alert-inner{flex-direction:row;justify-content:center;gap:12px}}
-  .alert p{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
-  @media(min-width:640px){.alert p{font-size:16px}}
-  .blink{font-size:18px;animation:blink 1s steps(2,start) infinite}
-  @keyframes blink{50%{opacity:.35}}
+  /* Alert — roxo forte, bem diferente */
+  .alert{background:var(--cta);color:#fff}
+  .alert-inner{max-width:1024px;margin:0 auto;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+  @media(min-width:640px){.alert-inner{flex-direction:row;justify-content:center;gap:14px}}
+  .alert p{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-family:Inter,sans-serif}
+  @media(min-width:640px){.alert p{font-size:17px}}
+  .star{font-size:22px;animation:starshine 1.5s ease-in-out infinite alternate}
+  @keyframes starshine{from{transform:scale(1) rotate(0deg)}to{transform:scale(1.3) rotate(20deg)}}
 
-  .heading{max-width:672px;margin:0 auto;padding:24px 16px 0;text-align:center}
-  .heading h1{font-size:22px;color:var(--primary)}
-  @media(min-width:640px){.heading h1{font-size:28px}}
+  /* Divider highlight abaixo do alert */
+  .highlight-bar{height:5px;background:linear-gradient(90deg,#6c3483,#9b59b6,#d4a8f0,#9b59b6,#6c3483)}
 
+  /* Heading — grande, claro, fundo escuro */
+  .heading{max-width:672px;margin:0 auto;padding:36px 20px 0;text-align:center}
+  .heading h1{font-size:26px;color:var(--foreground);line-height:1.35}
+  @media(min-width:640px){.heading h1{font-size:34px}}
+
+  /* Video */
   .video-section{background:var(--background)}
-  .video-wrap{max-width:672px;margin:0 auto;padding:24px 16px 32px;width:100%}
+  .video-wrap{max-width:672px;margin:0 auto;padding:28px 16px 40px;width:100%}
   vturb-smartplayer{display:block;margin:0 auto;width:100%}
 </style>
 </head>
@@ -77,10 +83,12 @@
 
 <div class="alert">
   <div class="alert-inner">
-    <span class="blink" aria-hidden="true">🔥</span>
-    <p>¡ESPERA! Tenemos una oferta exclusiva más para completar tu pedido.</p>
+    <span class="star" aria-hidden="true">🌟</span>
+    <p>¡ESPERA! Mira el video de abajo para completar tu pedido.</p>
+    <span class="star" aria-hidden="true">🌟</span>
   </div>
 </div>
+<div class="highlight-bar"></div>
 
 <div class="heading">
   <h1>Antes de continuar, mira esto…</h1>
@@ -93,10 +101,9 @@
 </main>
 
 <script>
-  // Render steps
   (function(){
     var labels=["Pedido","Pago","Etapas Exclusivas","Acceso al Producto"];
-    var current=2; // "Etapas Exclusivas" active
+    var current=2;
     var ol=document.getElementById("steps");
     labels.forEach(function(label,i){
       var done=i<current, active=i===current;
@@ -109,13 +116,11 @@
       if(i<labels.length-1){var b=document.createElement("div"); b.className="bar"+(i<current?" done":""); li.appendChild(b);}
       ol.appendChild(li);
     });
-    // Allow ?step=1..6 to override the substep number
     var p=new URLSearchParams(location.search).get("step");
     if(p && +p>=1 && +p<=3) document.getElementById("substep").textContent=p;
     else document.getElementById("substep").textContent="2";
   })();
 
-  // Vturb player
   (function(){
     var s=document.createElement("script");
     s.src="https://scripts.converteai.net/7072387c-52c8-4326-b9b6-2e5995c221ad/players/6a403f52d846aeb492a2414f/v4/player.js";
