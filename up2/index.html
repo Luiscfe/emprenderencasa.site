@@ -128,7 +128,25 @@
     document.head.appendChild(s);
   })();
 </script>
+ 
+ <style>
+  .esconder {
+    display: none;
+  }
+</style>
+
+<script>
+  var delaySeconds = 175;
+  var player = document.querySelector("vturb-smartplayer");
+  player.addEventListener("player:ready", function() {
+    player.displayHiddenElements(delaySeconds, [".esconder"], {
+      persist: true
+    });
+  });
+</script>
+ <div class="esconder">
 <div data-mndpay-render="019f1982-ac9b-706f-aaf1-8e28aa9032c9"></div>
+ </div>
  
 </body>
 </html>
